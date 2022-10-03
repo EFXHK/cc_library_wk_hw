@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/books" method="post">
+    <div>
+        <label for="title">Title:</label>
+        <textarea id="title" name="title" id="" cols="45" rows="1"></textarea>
+
+    </div>
+
+    <div>
+        <label for="author">Author:</label>
+        <input id="author" type="text" name="author">
+    </div>
+
+    <div>
+        <label for="genre">Genre:</label>
+        <input id="genre" type="text" name="genre">
+    </div>
+
+
+    <input type="submit">
+</form>
+
+{% for book in book %}  
+<div>
+  <p>
+    {{ book.title }}, 
+    {{ book.author }}, 
+    {{ book.genre }}
+    <span></span>
+  </p>
+</div>
+{% endfor %}
+{% endblock %}
